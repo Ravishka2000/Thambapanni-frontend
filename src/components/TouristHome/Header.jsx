@@ -71,7 +71,7 @@ const Header = () => {
                         ) : (
                             <>
                                 <Typography component={Link} to="/login" sx={{ textDecoration: 'none', fontSize: '18px', fontWeight: '800', color: 'black', pl: '20px', marginLeft: 'auto', display: { xs: 'none', md: 'block' } }}>Login</Typography>
-                                <Typography component={Link} to="/signup" sx={{ textDecoration: 'none', fontSize: '18px', fontWeight: '800', color: 'black', pl: '20px', marginRight: '20px', display: { xs: 'none', md: 'block' } }}>Register</Typography>
+                                <Typography component={Link} to="/rolesignup" sx={{ textDecoration: 'none', fontSize: '18px', fontWeight: '800', color: 'black', pl: '20px', marginRight: '20px', display: { xs: 'none', md: 'block' } }}>Register</Typography>
                             </>
                         )}
                         <Box sx={{ marginLeft: 'auto', display: { xs: 'block', md: 'none' } }}>
