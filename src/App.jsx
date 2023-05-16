@@ -35,8 +35,8 @@ import SignupRole from './pages/SignupRole';
 import DisplayABlog from './components/Blogs/DisplayABlog';
 
 function App() {
-  const { user } = useAuthContext()
-  const isAdmin = user && user.role === 'admin';
+    const { user } = useAuthContext()
+    const isAdmin = user && user.role === 'admin';
 
     return (
         <React.Fragment>
@@ -56,7 +56,7 @@ function App() {
                     <Route path="/about" element={<AboutUs />} exact></Route>
                     <Route path="/contact" element={<ContactUs />} exact></Route>
                     <Route path="/guides/:id" element={<GuideBooking />} exact></Route>
-                    <Route path="/rolesignup" element={<SignupRole/>} exact></Route>
+                    <Route path="/rolesignup" element={<SignupRole />} exact></Route>
                     <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/login"></Navigate>} />
                     <Route path="/guide-signup" element={!user ? <GuideSignup /> : <Navigate to="/login"></Navigate>} />
                     <Route path="/login" element={!user ? <Login /> : <Navigate to="/"></Navigate>} />
@@ -67,15 +67,15 @@ function App() {
                     <Route path="/api/manageHeritages" element={<ManageHeritages />} exact></Route>
                     <Route path="/api/editHeritages/:id" element={<EditHeritage />} exact></Route>
                     <Route path="/api/admin-dashboard" element={<AdminDashboard />} exact></Route>
-                    <Route path="/guide-dashboard" element={<Dashboard/>} exact></Route>
-                    <Route path="/editguide" element={<Editguide/>} exact></Route>
+                    <Route path="/guide-dashboard" element={<Dashboard />} exact></Route>
+                    <Route path="/editguide" element={<Editguide />} exact></Route>
                     <Route path="/blogs" element={<BlogDashboard />} exact></Route>
                     <Route path="/my-blog" element={<UserBlogs />} exact></Route>
                     <Route path="/create-blog" element={<CreateBlog />} exact></Route>
                     <Route path="/blog-details/:id" element={<BlogDetails />} exact></Route>
                     <Route path="/a_blog/:id" element={<DisplayABlog />} exact></Route>
-                    <Route path="/user-dashboard" element={<UserDashboard/>} exact></Route>
-                    
+                    <Route path="/user-dashboard" element={<UserDashboard />} exact></Route>
+
                 </Routes>
             </main>
 

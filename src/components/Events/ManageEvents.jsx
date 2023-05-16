@@ -16,7 +16,7 @@ const ManageEvents = () => {
     const [original, setOriginal] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:7070/api/events")
+        axios.get("https://thambapanni-backend.onrender.com/api/events")
             .then(response => {
                 setEvents(response.data)
                 setOriginal(response.data)
@@ -26,7 +26,7 @@ const ManageEvents = () => {
     }, [events])
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:7070/api/events/${id}`)
+        axios.delete(`https://thambapanni-backend.onrender.com/api/events/${id}`)
             .then(response => {
                 // Filter out the deleted event from the state
                 const updatedEvents = events.filter(event => event.id !== id);

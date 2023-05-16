@@ -18,7 +18,7 @@ const EditEvents = () => {
     const [success, setSuccess] = useState('');
 
     useEffect(() => {
-        axios.get("http://localhost:7070/api/events/get-event/" + id)
+        axios.get("https://thambapanni-backend.onrender.com/api/events/get-event/" + id)
             .then(response => {
                 setName(response.data.name)
                 setLocation(response.data.location)

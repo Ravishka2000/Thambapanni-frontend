@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -146,7 +145,7 @@ export default function Sidenav() {
                                 px: 3.5,
                                 '&:hover': {
                                     backgroundColor: '#D5F5E3',
-                                  },
+                                },
                             }}
                         >
                             <ListItemIcon
@@ -173,7 +172,7 @@ export default function Sidenav() {
                                 px: 2.5,
                                 '&:hover': {
                                     backgroundColor: '#D5F5E3',
-                                  },
+                                },
                             }}
                         >
                             <ListItemIcon
@@ -201,7 +200,7 @@ export default function Sidenav() {
                                 px: 2.5,
                                 '&:hover': {
                                     backgroundColor: '#D5F5E3',
-                                  },
+                                },
                             }}
                         >
                             <ListItemIcon

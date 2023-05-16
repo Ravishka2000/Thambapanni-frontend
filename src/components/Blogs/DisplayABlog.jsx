@@ -29,7 +29,7 @@ const DisplayABlog = () => {
 
     const handleRatingSubmit = async () => {
         try {
-            const response = await axios.post('http://localhost:7070/api/posts/rate', { blogId, rating },
+            const response = await axios.post('https://thambapanni-backend.onrender.com/api/posts/rate', { blogId, rating },
                 {
                     headers: {
                         "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const DisplayABlog = () => {
 
     const handleCommentSubmit = async () => {
         try {
-            await axios.post('http://localhost:7070/api/posts/comment', { blogId, text: comment },
+            await axios.post('https://thambapanni-backend.onrender.com/api/posts/comment', { blogId, text: comment },
                 {
                     headers: {
                         "Content-Type": "application/json",
@@ -68,7 +68,7 @@ const DisplayABlog = () => {
     // get blog details
     const getBlogDetail = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:7070/api/posts/get-post/${id}`);
+            const { data } = await axios.get(`https://thambapanni-backend.onrender.com/api/posts/get-post/${id}`);
             console.log(data);
             if (data?.success) {
                 setBlog(data?.blog);
@@ -96,7 +96,7 @@ const DisplayABlog = () => {
 
     const handleLikeButton = async () => {
         try {
-            const response = await axios.patch('http://localhost:7070/api/posts/like', { id }, {
+            const response = await axios.patch('https://thambapanni-backend.onrender.com/api/posts/like', { id }, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
@@ -111,7 +111,7 @@ const DisplayABlog = () => {
 
     const handleDislikeButton = async () => {
         try {
-            const response = await axios.patch('http://localhost:7070/api/posts/dislike', { id }, {
+            const response = await axios.patch('https://thambapanni-backend.onrender.com/api/posts/dislike', { id }, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }

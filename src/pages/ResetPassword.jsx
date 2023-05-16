@@ -28,7 +28,7 @@ const ResetPassword = () => {
 
         console.log(token)
 
-        axios.put(`http://localhost:7070/api/auth/reset-password/${token}`, { password }, {
+        axios.put(`https://thambapanni-backend.onrender.com/api/auth/reset-password/${token}`, { password }, {
             headers: { 'Content-Type': "application/json" }
         })
             .then(response => {
@@ -92,7 +92,7 @@ const ResetPassword = () => {
                     </div>
                     <Grid item xs={20}>
                         <Button variant="contained" type="submit"
-                            sx={{ color: 'white', backgroundColor: "#239B56", borderColor: 'green', width: '48ch', padding: 2, margin: 2, fontWeight: "bold",'&:hover': {background: '#239B56'} }}
+                            sx={{ color: 'white', backgroundColor: "#239B56", borderColor: 'green', width: '48ch', padding: 2, margin: 2, fontWeight: "bold", '&:hover': { background: '#239B56' } }}
                         >Reset Password</Button>
                         {error && <Alert variant="outlined" severity="error" style={{ fontWeight: "bold" }} >{error}</Alert>}
                         {success && <Alert variant="outlined" severity="success">{success}</Alert>}

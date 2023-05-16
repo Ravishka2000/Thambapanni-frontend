@@ -40,7 +40,7 @@ export default function BlogCard({
 
     const handleDelete = async () => {
         try {
-            const { data } = await axios.delete(`http://localhost:7070/api/posts/delete-post/${id}`);
+            const { data } = await axios.delete(`https://thambapanni-backend.onrender.com/api/posts/delete-post/${id}`);
             if (data?.success) {
                 alert("Blog Deleted");
                 window.location.reload();
@@ -52,7 +52,7 @@ export default function BlogCard({
 
     const handleLikeButton = async () => {
         try {
-            const response = await axios.patch('http://localhost:7070/api/posts/like', { id }, {
+            const response = await axios.patch('https://thambapanni-backend.onrender.com/api/posts/like', { id }, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
@@ -67,7 +67,7 @@ export default function BlogCard({
 
     const handleDislikeButton = async () => {
         try {
-            const response = await axios.patch('http://localhost:7070/api/posts/dislike', { id }, {
+            const response = await axios.patch('https://thambapanni-backend.onrender.com/api/posts/dislike', { id }, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }

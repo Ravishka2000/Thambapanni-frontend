@@ -20,7 +20,7 @@ export const useSignup = () => {
             mobile,
             role
         }
-        axios.post('http://localhost:7070/api/auth/register', data, {
+        axios.post('https://thambapanni-backend.onrender.com/api/auth/register', data, {
             headers: { 'Content-Type': "application/json" }
         })
             .then(response => {

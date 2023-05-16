@@ -32,7 +32,7 @@ const CreateHeritage = () => {
             organizer
         }
 
-        axios.post('http://localhost:7070/api/events/', eventData)
+        axios.post('https://thambapanni-backend.onrender.com/api/events/', eventData)
             .then(response => {
                 console.log(response.data);
                 setSuccess('Event is created successfully')

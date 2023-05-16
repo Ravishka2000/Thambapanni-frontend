@@ -4,7 +4,6 @@ import { Grid, TextField, Button, Alert, Container, Typography, IconButton } fro
 import Box from '@mui/system/Box';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { useAuthContext } from '../../hooks/useAuthContext';
-import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import axios from "axios"
 
 import React from 'react';
@@ -12,11 +11,11 @@ import React from 'react';
 const CreateHeritage = () => {
 
     const { user } = useAuthContext()
-    const[title,setTitle] = useState("")
-    const[description,setDescription] = useState("")
-    const[location,setLocation]= useState("")
-    const[error,setError]=useState("")
-    const[image,setImage] = useState("")
+    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("")
+    const [location, setLocation] = useState("")
+    const [error, setError] = useState("")
+    const [image, setImage] = useState("")
     const [imageUrl, setImageUrl] = useState('');
     const [success, setSuccess] = useState('');
 
@@ -43,11 +42,11 @@ const CreateHeritage = () => {
         formData.append('image', image);
         console.log(formData.get('image'))
 
-        axios.post('http://localhost:7070/api/heritages/', formData, {
-          headers: {
-            'Authorization': `Bearer ${user.token}`,
-            'Content-Type': 'multipart/form-data',
-          }
+        axios.post('https://thambapanni-backend.onrender.com/api/heritages/', formData, {
+            headers: {
+                'Authorization': `Bearer ${user.token}`,
+                'Content-Type': 'multipart/form-data',
+            }
         })
             .then(response => {
                 console.log(response.data);
@@ -186,7 +185,7 @@ const CreateHeritage = () => {
 
                                 </Grid>
                                 <div style={{ paddingTop: "20px" }}>
-                                    {error && <Alert  variant="outlined" severity="error" style={{ width: "250px", margin: "auto" }}>{error}</Alert>}
+                                    {error && <Alert variant="outlined" severity="error" style={{ width: "250px", margin: "auto" }}>{error}</Alert>}
                                     {success && <Alert variant="outlined" severity="success" style={{ width: "250px", margin: "auto" }}>{success}</Alert>}
                                 </div>
                             </Grid>

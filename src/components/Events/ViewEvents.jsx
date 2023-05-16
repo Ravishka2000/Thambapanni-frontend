@@ -9,7 +9,7 @@ const ViewEvents = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await axios.get("http://localhost:7070/api/events/");
+                const response = await axios.get("https://thambapanni-backend.onrender.com/api/events/");
                 setEvents(response.data);
                 console.log(events);
             } catch (error) {

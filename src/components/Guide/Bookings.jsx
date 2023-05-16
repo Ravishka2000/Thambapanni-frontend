@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Box, Card, CardMedia, CardContent, Typography, Grid } from '@mui/material';
-import { Link } from "react-router-dom";
+import { Box, Typography } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -20,16 +19,16 @@ const Bookings = () => {
     const { user } = useAuthContext()
 
     useEffect(() => {
-        fetch("http://localhost:7070/api/booking/bookings")
+        fetch("https://thambapanni-backend.onrender.com/api/booking/bookings")
             .then((res) => res.json())
-            .then((data) => {              
-                setbookings(data);              
+            .then((data) => {
+                setbookings(data);
             })
             .catch((err) => console.log(err));
     }, []);
 
     const approveOrder = (id, newStatus) => {
-            axios.put('http://localhost:7070/api/Booking/update/' + id, { status: newStatus })
+        axios.put('https://thambapanni-backend.onrender.com/api/Booking/update/' + id, { status: newStatus })
             .then(response => {
                 if (response.status === 200) {
                     const updatedStatus = bookings.map(booking => {
@@ -54,58 +53,58 @@ const Bookings = () => {
 
     return (
 
-      <div>
-        <Box height={80}/>
-      <Box sx={{ overflowX: "hidden", marginTop: "20px" }}
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          flexDirection={"column"}>
-          <Typography variant="h5" style={{ marginBottom: '16px', fontWeight: 'bold', color: '#19376D', padding: '3', }}>
-              My Bookings
-          </Typography>
-          <TableContainer component={Paper} sx={{ margin: "auto", width: 1200 }} elevation={0}>
-              <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                  <TableHead>
-                      <TableRow sx={{ backgroundColor: '#3aff0031' }}>
-                          <TableCell  sx={{ color: 'black', fontWeight: 'bold' }}>Booking Id</TableCell>
-                          <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Name</TableCell>
-                          <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Date</TableCell>
-                          <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Location</TableCell>
-                          <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Group size</TableCell>
-                          <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Phone</TableCell>
-                          <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Email</TableCell>
-                          <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Status</TableCell>
-                      </TableRow>
-                  </TableHead>
-                  <TableBody>
-                  {bookings && bookings.filter(booking => booking.guide._id === user._id).map(booking => (
-                      <TableRow
-                        key={booking._id}
-                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                    <TableCell component="th" scope="row">
-                    {booking._id}
-                    </TableCell>
-                    <TableCell align="right">
-                    {booking.name}
-                    </TableCell>
-                    <TableCell align="right" >
-                    {new Date(booking.tourDate).toLocaleDateString()}
-                    </TableCell>
-                    <TableCell align="right" >
-                    {booking.tourLocation}
-                    </TableCell>
-                    <TableCell align="right" >
-                    {booking.groupSize}
-                    </TableCell>
-                    <TableCell align="right" >
-                    {booking.phone}
-                    </TableCell>
-                    <TableCell align="right" >
-                    {booking.email}
-                    </TableCell>
-                    <TableCell align="right" >
-                    <FormControl>
+        <div>
+            <Box height={80} />
+            <Box sx={{ overflowX: "hidden", marginTop: "20px" }}
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                flexDirection={"column"}>
+                <Typography variant="h5" style={{ marginBottom: '16px', fontWeight: 'bold', color: '#19376D', padding: '3', }}>
+                    My Bookings
+                </Typography>
+                <TableContainer component={Paper} sx={{ margin: "auto", width: 1200 }} elevation={0}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <TableHead>
+                            <TableRow sx={{ backgroundColor: '#3aff0031' }}>
+                                <TableCell sx={{ color: 'black', fontWeight: 'bold' }}>Booking Id</TableCell>
+                                <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Name</TableCell>
+                                <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Date</TableCell>
+                                <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Location</TableCell>
+                                <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Group size</TableCell>
+                                <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Phone</TableCell>
+                                <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Email</TableCell>
+                                <TableCell align="right" sx={{ color: 'black', fontWeight: 'bold' }}>Status</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {bookings && bookings.filter(booking => booking.guide._id === user._id).map(booking => (
+                                <TableRow
+                                    key={booking._id}
+                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                                    <TableCell component="th" scope="row">
+                                        {booking._id}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {booking.name}
+                                    </TableCell>
+                                    <TableCell align="right" >
+                                        {new Date(booking.tourDate).toLocaleDateString()}
+                                    </TableCell>
+                                    <TableCell align="right" >
+                                        {booking.tourLocation}
+                                    </TableCell>
+                                    <TableCell align="right" >
+                                        {booking.groupSize}
+                                    </TableCell>
+                                    <TableCell align="right" >
+                                        {booking.phone}
+                                    </TableCell>
+                                    <TableCell align="right" >
+                                        {booking.email}
+                                    </TableCell>
+                                    <TableCell align="right" >
+                                        <FormControl>
                                             <Select
                                                 value={booking.Status}
                                                 onChange={(e) => {
@@ -119,18 +118,18 @@ const Bookings = () => {
                                                 <MenuItem value="Done">Done</MenuItem>
                                             </Select>
                                         </FormControl>
-                    </TableCell>
-                      </TableRow>
-                     ))}
-                      
+                                    </TableCell>
+                                </TableRow>
+                            ))}
 
-                  </TableBody>
-              </Table>
-          </TableContainer>
 
-      </Box>
-      <Box height={500}/>
-  </div>
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+
+            </Box>
+            <Box height={500} />
+        </div>
     );
 }
 

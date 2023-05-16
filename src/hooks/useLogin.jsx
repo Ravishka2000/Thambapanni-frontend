@@ -15,7 +15,7 @@ export const useLogin = () => {
             password
         }
 
-        axios.post('http://localhost:7070/api/auth/login', data, {
+        axios.post('https://thambapanni-backend.onrender.com/api/auth/login', data, {
             headers: { 'Content-Type': "application/json" }
         })
             .then(response => {
@@ -32,9 +32,9 @@ export const useLogin = () => {
             }).catch(error => {
                 setIsLoading(false);
                 if (error.response) {
-                  setError(error.response.data.message)
+                    setError(error.response.data.message)
                 } else {
-                  setError('An error occurred while trying to log in. Please try again later.')
+                    setError('An error occurred while trying to log in. Please try again later.')
                 }
             })
 

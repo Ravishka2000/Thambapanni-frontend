@@ -1,4 +1,4 @@
-import { Box, Card, Grid, Typography, CardActionArea, CardContent, CardMedia } from '@mui/material'
+import { Card, Grid, Typography, CardActionArea, CardContent, CardMedia } from '@mui/material'
 import React from 'react'
 
 const AboutUs = () => {
@@ -82,7 +82,7 @@ const AboutUs = () => {
                             </CardContent>
                         </CardActionArea>
                     </Card>
-                    
+
                 </Grid>
             </Grid>
 
