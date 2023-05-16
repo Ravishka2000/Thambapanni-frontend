@@ -130,15 +130,20 @@ const DisplayABlog = () => {
 
     const handleDeleteIcon = async (id) => {
         try {
-            const response = await axios.delete(`https://thambapanni-backend.onrender.com/api/posts/delete-comment`, { blogId: blogId, id: id }, {
-                headers: {
-                    'Authorization': `Bearer ${user.token}`
-                }
-            })
+          const response = await axios.delete(
+            `https://thambapanni-backend.onrender.com/api/posts/delete-comment`,
+            {
+              headers: {
+                'Authorization': `Bearer ${user.token}`
+              },
+              data: { blogId: blogId, id: id } // Pass data in the 'data' property
+            }
+          );
         } catch (error) {
-            console.log(error);
+          console.log(error);
         }
-    }
+      };
+      
 
     return (
         <Box>
