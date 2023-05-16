@@ -128,6 +128,18 @@ const DisplayABlog = () => {
         setEdit(true);
     }
 
+    const handleDeleteIcon = async (id) => {
+        try {
+            const response = await axios.delete(`https://thambapanni-backend.onrender.com/api/posts/delete-comment`, { blogId: blogId, id: id }, {
+                headers: {
+                    'Authorization': `Bearer ${user.token}`
+                }
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <Box>
             <Box style={{ backgroundColor: "#FAF9F6" }}>
@@ -232,7 +244,7 @@ const DisplayABlog = () => {
                                                         <IconButton onClick={handleEditIcon}>
                                                             <ModeEditIcon />
                                                         </IconButton>
-                                                        <IconButton>
+                                                        <IconButton onClick={handleDeleteIcon(id)}>
                                                             <DeleteIcon />
                                                         </IconButton>
                                                     </Box>
