@@ -22,7 +22,7 @@ const DisplayHeritages=()=>{
     };
 
     useEffect(()=>{
-        axios.get("http://localhost:7070/api/heritages/")
+        axios.get("https://thambapanni-backend.onrender.com/api/heritages/")
         .then(response=>{
             setHeritages(response.data)
             console.log(heritages)
