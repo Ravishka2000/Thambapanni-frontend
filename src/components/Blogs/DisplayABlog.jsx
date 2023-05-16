@@ -244,7 +244,7 @@ const DisplayABlog = () => {
                                                         <IconButton onClick={handleEditIcon}>
                                                             <ModeEditIcon />
                                                         </IconButton>
-                                                        <IconButton onClick={handleDeleteIcon(id)}>
+                                                        <IconButton onClick={() => handleDeleteIcon(comment.id)}>
                                                             <DeleteIcon />
                                                         </IconButton>
                                                     </Box>
