@@ -30,7 +30,8 @@
     "react-dom": "^18.2.0",
     "react-quill": "^2.0.0",
     "react-router-dom": "^6.11.0",
-    "styled-components": "^5.3.10"
+    "styled-components": "^5.3.10",
+    "sweetalert2": "^11.7.5"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
