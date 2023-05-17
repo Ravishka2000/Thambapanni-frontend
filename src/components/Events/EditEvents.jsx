@@ -44,7 +44,7 @@ const EditEvents = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        axios.put('http://localhost:7070/api/events/' + id, eventData)
+        axios.put('https://thambapanni-backend.onrender.com/api/events/' + id, eventData)
             .then(response => {
                 console.log(response.data);
                 setSuccess('Event is updated successfully')
