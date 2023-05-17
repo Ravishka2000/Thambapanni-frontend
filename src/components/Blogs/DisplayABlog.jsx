@@ -23,6 +23,7 @@ const DisplayABlog = () => {
     const [error, setError] = useState('');
     const [edit, setEdit] = useState(false);
     const [successful, setSuccessful] = useState(false);
+    const [deleteAlert, setDeleteAlert] = useState(false);
 
     const handleCommentChange = (event) => {
         setComment(event.target.value);
@@ -54,6 +55,9 @@ const DisplayABlog = () => {
                 });
             setComment('');
             setError('');
+            if(response){
+                setSuccessful(true);
+            }
         } catch (err) {
             setError('Error adding comment');
         }
@@ -142,7 +146,7 @@ const DisplayABlog = () => {
             );
 
             if(response){
-                setSuccessful(true);
+                setDeleteAlert(true);
             }
 
         } catch (error) {
@@ -277,7 +281,13 @@ const DisplayABlog = () => {
 
             <Snackbar open={successful} onClose={() => setSuccessful(false)} autoHideDuration={5000} TransitionComponent={Slide} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
                 <Alert severity="success" variant='filled' sx={{ width: '300px' }}>
-                    Comment added!
+                    Comment Added!
+                </Alert>
+            </Snackbar>
+
+            <Snackbar open={deleteAlert} onClose={() => setDeleteAlert(false)} autoHideDuration={5000} TransitionComponent={Slide} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
+                <Alert severity="success" variant='filled' sx={{ width: '300px' }}>
+                    Comment Deleted!
                 </Alert>
             </Snackbar>
 
