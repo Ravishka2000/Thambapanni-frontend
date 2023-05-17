@@ -55,9 +55,8 @@ const DisplayABlog = () => {
                 });
             setComment('');
             setError('');
-            if(response){
-                setSuccessful(true);
-            }
+            setSuccessful(true);
+            
         } catch (err) {
             setError('Error adding comment');
         }
@@ -96,7 +95,7 @@ const DisplayABlog = () => {
 
     useEffect(() => {
         getBlogDetail();
-    }, [isLiked]);
+    });
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
     const handleLikeButton = async () => {
