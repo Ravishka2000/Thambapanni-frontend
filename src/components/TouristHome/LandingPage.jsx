@@ -33,7 +33,7 @@ const LandingPage = () => {
 
             <Grid container spacing={1} width={'100%'} sx={{ position: "absolute", top: { xs: "15%", sm: "10%" }, right: { xs: "0%", sm: "auto" }, display: "flex", flexDirection: { xs: "column", sm: "row" }, alignItems: "center" }}>
                 <Grid xs={12} sm={6} mt={{ xs: 0, sm: 10 }} ml={{ xs: 0, sm: 24 }} textAlign={{ xs: 'center', sm: 'left' }}>
-                    <Typography variant='h1' fontWeight={800} lineHeight={{ xs: 1, sm: 1.2 }} letterSpacing={{ xs: 2, sm: 4 }} fontFamily={'serif'} fontSize={{ xs: '2rem', sm: '5rem' }}>DISCOVER THE <br />SOUL OF <br />CEYLONE</Typography>
+                    <Typography variant='h1' fontWeight={800} lineHeight={{ xs: 1, sm: 1.2 }} letterSpacing={{ xs: 2, sm: 4 }} fontFamily={'serif'} fontSize={{ xs: '2rem', sm: '5rem' }}>DISCOVER THE <br />SOUL OF <br />CEYLON</Typography>
                     <Typography fontStyle={'italic'} variant='h6' mt={5} sx={{ maxWidth: { xs: "20em", sm: "30em" } }} fontSize={{ xs: '1rem', sm: '1.4rem' }}>{text}</Typography>
 
                     <Box sx={{ display: "flex", flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'center', sm: 'flex-start' } }} mt={4}>
